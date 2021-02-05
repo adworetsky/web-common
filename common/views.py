@@ -91,4 +91,4 @@ def directions_page(request):
 
 # values
 def values(request):
-    return render(request, 'common/directions_contact.html')
+    return render(request, 'common/values.html')
