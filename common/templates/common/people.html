@@ -24,9 +24,9 @@
                 </div>
             </div>
             {% endif %}
-            {% for person in pi %}
-            {% cycle '<div class="row no-gutters">' '' '' %}
-                <div class="col-12 col-md-3 offset-md-1">
+            <div class="row no-gutters">
+                {% for person in pi %}
+                <div class="col-12 col-md-3 offset-md-1 col-lg-2 offset-lg-1">
                     <div class="card card-pad img-fluid" style="width: 14rem;">
                         {% if person.photo %}
                         <img class="card-img-top" src="{{ person.photo.url }}" data-toggle="modal" data-target="#{{ person.first_name }}{{ person.last_name }}">
@@ -39,12 +39,8 @@
                     </div>
                     <br><br>
                 </div>
-            {% if forloop.last %}
+                {% endfor %}
             </div>
-            {% else %}
-            {% cycle '' '' '</div>' %}
-            {% endif %}
-            {% endfor %}
             {% if staff %}
             <div class="row">
                 <div class="col-10 offset-1">
@@ -52,9 +48,9 @@
                 </div>
             </div>
             {% endif %}
-            {% for person in staff %}
-            {% cycle '<div class="row no-gutters">' '' '' %}
-                <div class="col-12 col-md-3 offset-md-1">
+            <div class="row no-gutters">
+                {% for person in staff %}
+                <div class="col-12 col-md-3 offset-md-1 col-lg-2 offset-lg-1">
                     <div class="card card-pad img-fluid" style="width: 14rem;">
                         {% if person.photo %}
                         <img class="card-img-top" src="{{ person.photo.url }}" data-toggle="modal" data-target="#{{ person.first_name }}{{ person.last_name }}">
@@ -67,12 +63,8 @@
                     </div>
                     <br><br>
                 </div>
-            {% if forloop.last %}
+                {% endfor %}
             </div>
-            {% else %}
-            {% cycle '' '' '</div>' %}
-            {% endif %}
-            {% endfor %}
             {% if postdoc %}
             <div class="row">
                 <div class="col-10 offset-1">
@@ -80,9 +72,9 @@
                 </div>
             </div>
             {% endif %}
-            {% for person in postdoc %}
-            {% cycle '<div class="row no-gutters">' '' '' %}
-                <div class="col-12 col-md-3 offset-md-1">
+            <div class="row no-gutters">
+                {% for person in postdoc %}
+                <div class="col-12 col-md-3 offset-md-1 col-lg-2 offset-lg-1">
                     <div class="card card-pad img-fluid" style="width: 14rem;">
                         {% if person.photo %}
                         <img class="card-img-top" src="{{ person.photo.url }}" data-toggle="modal" data-target="#{{ person.first_name }}{{ person.last_name }}">
@@ -95,12 +87,8 @@
                     </div>
                     <br><br>
                 </div>
-            {% if forloop.last %}
+                {% endfor %}
             </div>
-            {% else %}
-            {% cycle '' '' '</div>' %}
-            {% endif %}
-            {% endfor %}
             {% if gradstudent %}
             <div class="row">
                 <div class="col-10 offset-1">
@@ -108,9 +96,9 @@
                 </div>
             </div>
             {% endif %}
-            {% for person in gradstudent %}
-            {% cycle '<div class="row no-gutters">' '' '' %}
-                <div class="col-12 col-md-3 offset-md-1">
+            <div class="row no-gutters">
+                {% for person in gradstudent %}
+                <div class="col-12 col-md-3 offset-md-1 col-lg-2 offset-lg-1">
                     <div class="card card-pad img-fluid" style="width: 14rem;">
                         {% if person.photo %}
                         <img class="card-img-top" src="{{ person.photo.url }}" data-toggle="modal" data-target="#{{ person.first_name }}{{ person.last_name }}">
@@ -123,12 +111,8 @@
                     </div>
                     <br><br>
                 </div>
-            {% if forloop.last %}
+                {% endfor %}
             </div>
-            {% else %}
-            {% cycle '' '' '</div>' %}
-            {% endif %}
-            {% endfor %}
             {% if ra %}
             <div class="row">
                 <div class="col-10 offset-1">
@@ -136,9 +120,9 @@
                 </div>
             </div>
             {% endif %}
-            {% for person in ra %}
-            {% cycle '<div class="row no-gutters">' '' '' %}
-                <div class="col-12 col-md-3 offset-md-1">
+            <div class="row no-gutters">
+                {% for person in ra %}
+                <div class="col-12 col-md-3 offset-md-1 col-lg-2 offset-lg-1">
                     <div class="card card-pad img-fluid" style="width: 14rem;">
                         {% if person.photo %}
                         <img class="card-img-top" src="{{ person.photo.url }}" data-toggle="modal" data-target="#{{ person.first_name }}{{ person.last_name }}">
@@ -151,12 +135,8 @@
                     </div>
                     <br><br>
                 </div>
-            {% if forloop.last %}
+                {% endfor %}
             </div>
-            {% else %}
-            {% cycle '' '' '</div>' %}
-            {% endif %}
-            {% endfor %}
             {% if undergrad %}
             <div class="row">
                 <div class="col-10 offset-1">
@@ -164,9 +144,9 @@
                 </div>
             </div>
             {% endif %}
-            {% for person in undergrad %}
-            {% cycle '<div class="row no-gutters">' '' '' %}
-                <div class="col-12 col-md-3 offset-md-1">
+            <div class="row no-gutters">
+                {% for person in undergrad %}
+                <div class="col-12 col-md-3 offset-md-1 col-lg-2 offset-lg-1">
                     <div class="card card-pad img-fluid" style="width: 14rem;">
                         {% if person.photo %}
                         <img class="card-img-top" src="{{ person.photo.url }}" data-toggle="modal" data-target="#{{ person.first_name }}{{ person.last_name }}">
@@ -179,12 +159,8 @@
                     </div>
                     <br><br>
                 </div>
-            {% if forloop.last %}
+                {% endfor %}
             </div>
-            {% else %}
-            {% cycle '' '' '</div>' %}
-            {% endif %}
-            {% endfor %}
             {% if other %}
             <div class="row">
                 <div class="col-10 offset-1">
@@ -192,9 +168,9 @@
                 </div>
             </div>
             {% endif %}
-            {% for person in other %}
-            {% cycle '<div class="row no-gutters">' '' '' %}
-                <div class="col-12 col-md-3 offset-md-1">
+            <div class="row no-gutters">
+                {% for person in other %}
+                <div class="col-12 col-md-3 offset-md-1 col-lg-2 offset-lg-1">
                     <div class="card card-pad img-fluid" style="width: 14rem;">
                         {% if person.photo %}
                         <img class="card-img-top" src="{{ person.photo.url }}" data-toggle="modal" data-target="#{{ person.first_name }}{{ person.last_name }}">
@@ -207,12 +183,8 @@
                     </div>
                     <br><br>
                 </div>
-            {% if forloop.last %}
+                {% endfor %}
             </div>
-            {% else %}
-            {% cycle '' '' '</div>' %}
-            {% endif %}
-            {% endfor %}
             {% if alumni %}
             <div class="row">
                 <div class="col-10 offset-1">
@@ -220,9 +192,9 @@
                 </div>
             </div>
             {% endif %}
-            {% for person in alumni %}
-            {% cycle '<div class="row no-gutters">' '' '' %}
-                <div class="col-12 col-md-3 offset-md-1">
+            <div class="row no-gutters">
+                {% for person in alumni %}
+                <div class="col-12 col-md-3 offset-md-1 col-lg-2 offset-lg-1">
                     <div class="card card-pad img-fluid" style="width: 14rem;">
                         {% if person.photo %}
                         <img class="card-img-top" src="{{ person.photo.url }}" data-toggle="modal" data-target="#{{ person.first_name }}{{ person.last_name }}">
@@ -235,12 +207,8 @@
                     </div>
                     <br><br>
                 </div>
-            {% if forloop.last %}
+                {% endfor %}
             </div>
-            {% else %}
-            {% cycle '' '' '</div>' %}
-            {% endif %}
-            {% endfor %}
         </div>
     </div>
 </div>

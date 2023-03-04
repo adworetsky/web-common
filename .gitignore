@@ -108,3 +108,6 @@ ENV/
 
 # postgres data
 postgres_data/
+
+# dropbox api token
+dropbox_token
