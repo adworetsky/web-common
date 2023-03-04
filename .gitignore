@@ -105,3 +105,6 @@ ENV/
 
 # media
 /media
+
+# postgres data
+postgres_data/

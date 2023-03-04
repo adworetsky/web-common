@@ -1,5 +1,5 @@
 {% extends 'common/base.html' %}
-{% load staticfiles %}
+{% load static %}
 
 {% block title %}publications{% endblock %}
 
@@ -8,8 +8,8 @@
 {% block content %}
 <div class="container-fluid nopad pagefade">
     <div class="row no-gutters title">
-        <div class="col-9 offset-2 col-md-5 offset-md-0 col-lg-4 align-self-center">
-            <h1 class="display-4 black-text animated fadeInLeft section-title">publications</h1>
+        <div class="col-9 offset-2 col-md-5 offset-md-0 col-lg-4" style="display: flex; height: 100vh">
+            <h1 class="display-4 black-text animated fadeInLeft section-title align-self-center">publications</h1>
         </div>
         <div class="col-9 offset-2 col-md-6 offset-md-0 col-lg-7 animated fadeInRight content">
         	<div class="row no-gutters">

@@ -1,0 +1,34 @@
+services:
+  gunicorn:
+    image: vanandrew/test
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"
+    networks:
+      - main
+    environment:
+      - DATABASE_URL=postgres://ajxfstclzxhdss:postgres@postgres:5432/d7i8e5thopmkvh
+      - PRODUCTION=TRUE
+      - DEBUG=TRUE
+    secrets:
+      - dropbox
+    restart: always
+  postgres:
+    image: postgres:15.2
+    networks:
+      - main
+    environment:
+      - POSTGRES_USER=ajxfstclzxhdss
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=d7i8e5thopmkvh
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    restart: always
+
+secrets:
+  dropbox:
+    file: ./dropbox_token
+
+networks:
+  main: {}
