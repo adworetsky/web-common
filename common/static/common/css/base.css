@@ -69,3 +69,7 @@ body {
 @media (min-width: 1200px) {
 
 }
+
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0) !important;
+}
