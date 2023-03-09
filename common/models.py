@@ -14,7 +14,9 @@ class lab_member(models.Model):
     last_name = models.CharField(max_length=70, verbose_name="Last Name")
 
     # Email of lab member
-    email = models.CharField(max_length=254, null=True, blank=True, verbose_name="Email")
+    email = models.CharField(
+        max_length=254, null=True, blank=True, verbose_name="Email"
+    )
 
     # Phone number of lab member
     phone = models.CharField(max_length=13, null=True, blank=True, verbose_name="Phone")
@@ -42,7 +44,9 @@ class lab_member(models.Model):
     alumni = models.BooleanField(verbose_name="Lab Alumni")
 
     # Photo of lab member
-    photo = models.ImageField(upload_to="portraits/", null=True, blank=True, verbose_name="Photo")
+    photo = models.ImageField(
+        upload_to="portraits/", null=True, blank=True, verbose_name="Photo"
+    )
 
     # Cv of lab member
     cv = models.FileField(upload_to="cv/", null=True, blank=True, verbose_name="CV")
@@ -58,7 +62,9 @@ class publication(models.Model):
         verbose_name = "Publication"
 
     # Publication Title
-    title = models.CharField(max_length=350, unique=True, verbose_name="Publication Title")
+    title = models.CharField(
+        max_length=350, unique=True, verbose_name="Publication Title"
+    )
 
     # Publication Container
     container = models.TextField(default=datetime.date.today, verbose_name="Citation")
@@ -67,7 +73,9 @@ class publication(models.Model):
     date = models.DateField(verbose_name="Date Published")
 
     # Paper Upload
-    paper = models.FileField(upload_to="papers/", null=True, blank=True, verbose_name="Paper")
+    paper = models.FileField(
+        upload_to="papers/", null=True, blank=True, verbose_name="Paper"
+    )
 
     # Return the name of the model
     def __str__(self):
@@ -80,7 +88,9 @@ class publication_link(models.Model):
         verbose_name = "Publication Link"
 
     # Create foreign key to publication class
-    publication = models.ForeignKey(publication, on_delete=models.CASCADE, verbose_name="Publication Link")
+    publication = models.ForeignKey(
+        publication, on_delete=models.CASCADE, verbose_name="Publication Link"
+    )
 
     # Publication Link Name
     name = models.CharField(max_length=350, null=True, blank=True, verbose_name="Name")
@@ -127,7 +137,9 @@ class current_study(models.Model):
     link = models.CharField(max_length=1000, null=True, verbose_name="Link")
 
     # flier attachement
-    flier = models.FileField(upload_to="attachments/", null=True, blank=True, verbose_name="Flier")
+    flier = models.FileField(
+        upload_to="attachments/", null=True, blank=True, verbose_name="Flier"
+    )
 
     def __str__(self):
         return self.title
@@ -148,7 +160,9 @@ class data_listing(models.Model):
     link = models.CharField(max_length=1000, null=True, verbose_name="Link")
 
     # image for data_listing
-    image = models.ImageField(upload_to="data_listing_images/", null=True, blank=True, verbose_name="Image")
+    image = models.ImageField(
+        upload_to="data_listing_images/", null=True, blank=True, verbose_name="Image"
+    )
 
     def __str__(self):
         return self.title
@@ -169,7 +183,12 @@ class software_listing(models.Model):
     link = models.CharField(max_length=1000, null=True, verbose_name="Link")
 
     # image for software listing
-    image = models.ImageField(upload_to="software_listing_images/", null=True, blank=True, verbose_name="Image")
+    image = models.ImageField(
+        upload_to="software_listing_images/",
+        null=True,
+        blank=True,
+        verbose_name="Image",
+    )
 
     def __str__(self):
         return self.title

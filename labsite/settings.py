@@ -34,7 +34,12 @@ else:  # Do these things when DEBUG is disabled
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_SSL_REDIRECT = True
 
-ALLOWED_HOSTS = ["grattonlabbackend.herokuapp.com", "www.grattonlab.org", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "grattonlabbackend.herokuapp.com",
+    "www.grattonlab.org",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
@@ -89,7 +94,9 @@ DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "test.d
 # Use the DATABASE_URL env variable
 try:
     if os.environ["PRODUCTION"] == "TRUE":
-        DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=False)
+        DATABASES["default"] = dj_database_url.config(
+            conn_max_age=600, ssl_require=False
+        )
         print("DATABASE has been set to postgres.")
 except KeyError:
     pass

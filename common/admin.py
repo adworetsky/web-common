@@ -9,7 +9,19 @@ class labmemberadmin(admin.ModelAdmin):
     fieldsets = (
         (
             "Lab Member Data",
-            {"fields": ("first_name", "last_name", "email", "phone", "title", "blurb", "alumni", "photo", "cv")},
+            {
+                "fields": (
+                    "first_name",
+                    "last_name",
+                    "email",
+                    "phone",
+                    "title",
+                    "blurb",
+                    "alumni",
+                    "photo",
+                    "cv",
+                )
+            },
         ),
     )
     search_fields = (

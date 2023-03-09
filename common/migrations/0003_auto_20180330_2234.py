@@ -7,22 +7,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('common', '0002_news_item'),
+        ("common", "0002_news_item"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='news_item',
-            options={'verbose_name': 'News Item'},
+            name="news_item",
+            options={"verbose_name": "News Item"},
         ),
         migrations.AlterField(
-            model_name='news_item',
-            name='content',
+            model_name="news_item",
+            name="content",
             field=ckeditor_uploader.fields.RichTextUploadingField(),
         ),
         migrations.AlterField(
-            model_name='news_item',
-            name='title',
-            field=models.CharField(max_length=350, unique=True, verbose_name='Title'),
+            model_name="news_item",
+            name="title",
+            field=models.CharField(max_length=350, unique=True, verbose_name="Title"),
         ),
     ]
