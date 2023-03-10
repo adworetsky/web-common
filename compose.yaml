@@ -1,6 +1,6 @@
 services:
   gunicorn:
-    image: vanandrew/test
+    image: caterinagratton/gratton-lab-website
     depends_on:
       - postgres
     ports:
