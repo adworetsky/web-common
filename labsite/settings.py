@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import dropbox
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,8 +35,8 @@ else:  # Do these things when DEBUG is disabled
 ALLOWED_HOSTS = [
     "grattonlabbackend.herokuapp.com",
     "www.grattonlab.org",
-    "localhost",
     "127.0.0.1",
+    "localhost",
 ]
 
 # Application definition
@@ -94,6 +92,7 @@ DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": "test.d
 # Use the DATABASE_URL env variable
 try:
     if os.environ["PRODUCTION"] == "TRUE":
+        import dj_database_url
         DATABASES["default"] = dj_database_url.config(
             conn_max_age=600, ssl_require=False
         )
@@ -139,6 +138,7 @@ USE_TZ = True
 
 # Set Dropbox OAUTH TOKEN and file storage only if defined
 try:
+    import dropbox
     # set the token
     DROPBOX_OAUTH2_TOKEN = os.environ.get("DROPBOX_TOKEN")
     if not DROPBOX_OAUTH2_TOKEN:
@@ -172,3 +172,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # for grappelli admin theme
 GRAPPELLI_ADMIN_TITLE = "Gratton Lab"
+
+# set URL_SUBPATH if defined in environment
+try:
+    with open("/run/secrets/url-subpath", "r") as f:
+        URL_SUBPATH = f.read()
+except Exception:
+    URL_SUBPATH = ""

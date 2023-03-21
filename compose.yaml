@@ -29,6 +29,8 @@ services:
 secrets:
   dropbox:
     file: ./dropbox_token
+  url-subpath:
+    file: ./url_subpath
 
 networks:
   main: {}
