@@ -163,19 +163,23 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_CONFIGS = {"default": {"width": "100%"}}
 
-# Set static directory
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
 # set default auto field
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # for grappelli admin theme
 GRAPPELLI_ADMIN_TITLE = "Gratton Lab"
 
-# set URL_SUBPATH if defined in environment
-try:
-    with open("/run/secrets/url-subpath", "r") as f:
-        URL_SUBPATH = f.read()
-except Exception:
-    URL_SUBPATH = ""
+
+if os.environ.get("USE_SUBPATH") == "TRUE":
+    print("Using subpath: /grattonlab")
+    # Set SCRIPT_NAME
+    FORCE_SCRIPT_NAME = "/grattonlab"
+
+    # Set static directory
+    STATIC_URL = "/grattonlab/static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+    WHITENOISE_STATIC_PREFIX = "/static/"
+else:
+    # Set static directory
+    STATIC_URL = "/static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")

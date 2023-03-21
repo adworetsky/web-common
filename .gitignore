@@ -111,3 +111,6 @@ postgres_data/
 
 # dropbox api token
 dropbox_token
+
+# ignore static
+static/

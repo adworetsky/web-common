@@ -11,6 +11,7 @@ services:
       - DATABASE_URL=postgres://ajxfstclzxhdss:postgres@postgres:5432/d7i8e5thopmkvh
       - PRODUCTION=TRUE
       - DEBUG=TRUE
+      - USE_SUBPATH=TRUE
     secrets:
       - dropbox
     restart: always
@@ -29,8 +30,6 @@ services:
 secrets:
   dropbox:
     file: ./dropbox_token
-  url-subpath:
-    file: ./url_subpath
 
 networks:
   main: {}
