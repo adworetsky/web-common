@@ -7,16 +7,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('common', '0001_initial'),
+        ("common", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='news_item',
+            name="news_item",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=350, unique=True, verbose_name='Link')),
-                ('content', ckeditor.fields.RichTextField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(max_length=350, unique=True, verbose_name="Link"),
+                ),
+                ("content", ckeditor.fields.RichTextField()),
             ],
         ),
     ]

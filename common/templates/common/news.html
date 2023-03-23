@@ -1,5 +1,5 @@
 {% extends 'common/base.html' %}
-{% load staticfiles %}
+{% load static %}
 
 {% block title %}news{% endblock %}
 
@@ -8,10 +8,10 @@
 {% block content %}
 <div class="container-fluid nopad pagefade">
     <div class="row no-gutters title">
-        <div class="col-9 offset-2 col-md-3 offset-md-0 align-self-center">
-            <h1 class="display-4 black-text animated fadeInLeft section-title">news</h1>
+        <div class="col-9 offset-2 col-md-3 offset-md-0 section-title-container">
+            <h1 class="display-4 black-text animated fadeInLeft section-title align-self-center">news</h1>
         </div>
-        <div class="col-9 offset-2 col-md-8 offset-md-0 animated fadeInRight">
+        <div class="col-9 offset-2 col-md-9 offset-md-0 animated fadeInRight scrollable">
             <form class="form-layout" method="get">
                 <div class="form-row">
                     <div class="form-group col">
@@ -25,13 +25,25 @@
                     <div class="form-group col">
                         <select name="month" class="form-control">
                             <option value="month">Months</option>
-                            {% for monthitem in monthnum %}
+                            <option value="1" {% if month == 1 %}selected{% endif %}>January</option>
+                            <option value="2" {% if month == 2 %}selected{% endif %}>February</option>
+                            <option value="3" {% if month == 3 %}selected{% endif %}>March</option>
+                            <option value="4" {% if month == 4 %}selected{% endif %}>April</option>
+                            <option value="5" {% if month == 5 %}selected{% endif %}>May</option>
+                            <option value="6" {% if month == 6 %}selected{% endif %}>June</option>
+                            <option value="7" {% if month == 7 %}selected{% endif %}>July</option>
+                            <option value="8" {% if month == 8 %}selected{% endif %}>August</option>
+                            <option value="9" {% if month == 9 %}selected{% endif %}>September</option>
+                            <option value="10" {% if month == 10 %}selected{% endif %}>October</option>
+                            <option value="11" {% if month == 11 %}selected{% endif %}>November</option>
+                            <option value="12" {% if month == 12 %}selected{% endif %}>December</option>
+                            <!-- {% for monthitem in monthnum %}
                             <option value="{{ monthitem }}"  {% if month == monthitem %}selected{% endif %}>{{ monthitem }}</option>
-                            {% endfor %}
+                            {% endfor %} -->
                         </select>
                     </div>
                     <div class="form-group col">
-                        <button class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary">Filter</button>
                     </div>
                 </div>
             </form>

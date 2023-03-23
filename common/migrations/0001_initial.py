@@ -9,101 +9,258 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='current_study',
+            name="current_study",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=350, verbose_name='Title')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Description')),
-                ('link', models.CharField(max_length=1000, null=True, verbose_name='Link')),
-                ('flier', models.FileField(blank=True, null=True, upload_to='attachments/', verbose_name='Flier')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=350, verbose_name="Title")),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Description"),
+                ),
+                (
+                    "link",
+                    models.CharField(max_length=1000, null=True, verbose_name="Link"),
+                ),
+                (
+                    "flier",
+                    models.FileField(
+                        blank=True,
+                        null=True,
+                        upload_to="attachments/",
+                        verbose_name="Flier",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Current Study',
+                "verbose_name": "Current Study",
             },
         ),
         migrations.CreateModel(
-            name='data_listing',
+            name="data_listing",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=350, verbose_name='Title')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Description')),
-                ('link', models.CharField(max_length=1000, null=True, verbose_name='Link')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='data_listing_images/', verbose_name='Image')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=350, verbose_name="Title")),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Description"),
+                ),
+                (
+                    "link",
+                    models.CharField(max_length=1000, null=True, verbose_name="Link"),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True,
+                        null=True,
+                        upload_to="data_listing_images/",
+                        verbose_name="Image",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Data Listing',
+                "verbose_name": "Data Listing",
             },
         ),
         migrations.CreateModel(
-            name='job_listing',
+            name="job_listing",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=350, verbose_name='Title')),
-                ('post_date', models.DateField(auto_now_add=True, verbose_name='Posting Date')),
-                ('jobid', models.IntegerField(verbose_name='Job ID#')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Description')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=350, verbose_name="Title")),
+                (
+                    "post_date",
+                    models.DateField(auto_now_add=True, verbose_name="Posting Date"),
+                ),
+                ("jobid", models.IntegerField(verbose_name="Job ID#")),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Description"),
+                ),
             ],
             options={
-                'verbose_name': 'Job Listing',
+                "verbose_name": "Job Listing",
             },
         ),
         migrations.CreateModel(
-            name='lab_member',
+            name="lab_member",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(max_length=70, verbose_name='First Name')),
-                ('last_name', models.CharField(max_length=70, verbose_name='Last Name')),
-                ('email', models.CharField(blank=True, max_length=254, null=True, verbose_name='Email')),
-                ('phone', models.CharField(blank=True, max_length=13, null=True, verbose_name='Phone')),
-                ('title', models.CharField(blank=True, max_length=70, null=True, verbose_name='Title')),
-                ('blurb', models.TextField(verbose_name='Blurb')),
-                ('alumni', models.BooleanField(verbose_name='Lab Alumni')),
-                ('photo', models.ImageField(blank=True, null=True, upload_to='portraits/', verbose_name='Photo')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "first_name",
+                    models.CharField(max_length=70, verbose_name="First Name"),
+                ),
+                (
+                    "last_name",
+                    models.CharField(max_length=70, verbose_name="Last Name"),
+                ),
+                (
+                    "email",
+                    models.CharField(
+                        blank=True, max_length=254, null=True, verbose_name="Email"
+                    ),
+                ),
+                (
+                    "phone",
+                    models.CharField(
+                        blank=True, max_length=13, null=True, verbose_name="Phone"
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        blank=True, max_length=70, null=True, verbose_name="Title"
+                    ),
+                ),
+                ("blurb", models.TextField(verbose_name="Blurb")),
+                ("alumni", models.BooleanField(verbose_name="Lab Alumni")),
+                (
+                    "photo",
+                    models.ImageField(
+                        blank=True,
+                        null=True,
+                        upload_to="portraits/",
+                        verbose_name="Photo",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Lab Member',
+                "verbose_name": "Lab Member",
             },
         ),
         migrations.CreateModel(
-            name='publication',
+            name="publication",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=350, unique=True, verbose_name='Publication Title')),
-                ('container', models.TextField(default=datetime.date.today, verbose_name='Citation')),
-                ('date', models.DateField(verbose_name='Date Published')),
-                ('paper', models.FileField(blank=True, null=True, upload_to='papers/', verbose_name='Paper')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        max_length=350, unique=True, verbose_name="Publication Title"
+                    ),
+                ),
+                (
+                    "container",
+                    models.TextField(
+                        default=datetime.date.today, verbose_name="Citation"
+                    ),
+                ),
+                ("date", models.DateField(verbose_name="Date Published")),
+                (
+                    "paper",
+                    models.FileField(
+                        blank=True, null=True, upload_to="papers/", verbose_name="Paper"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Publication',
+                "verbose_name": "Publication",
             },
         ),
         migrations.CreateModel(
-            name='publication_link',
+            name="publication_link",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('link', models.CharField(max_length=350, unique=True, verbose_name='Link')),
-                ('publication', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='common.publication', verbose_name='Publication Link')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "link",
+                    models.CharField(max_length=350, unique=True, verbose_name="Link"),
+                ),
+                (
+                    "publication",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="common.publication",
+                        verbose_name="Publication Link",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Publication Link',
+                "verbose_name": "Publication Link",
             },
         ),
         migrations.CreateModel(
-            name='software_listing',
+            name="software_listing",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=350, verbose_name='Title')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Description')),
-                ('link', models.CharField(max_length=1000, null=True, verbose_name='Link')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='software_listing_images/', verbose_name='Image')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=350, verbose_name="Title")),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Description"),
+                ),
+                (
+                    "link",
+                    models.CharField(max_length=1000, null=True, verbose_name="Link"),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True,
+                        null=True,
+                        upload_to="software_listing_images/",
+                        verbose_name="Image",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Software Listing',
+                "verbose_name": "Software Listing",
             },
         ),
     ]

@@ -105,3 +105,12 @@ ENV/
 
 # media
 /media
+
+# postgres data
+postgres_data/
+
+# dropbox api token
+dropbox_token
+
+# ignore static
+static/

@@ -2,70 +2,111 @@
 body {
     min-height: 100vh;
 }
+
 .title {
     height: 100vh;
     background: #FFF;
 }
+
 .nopad {
-    padding-left:0;
-    padding-right:0;
-    overflow-x:hidden;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
 }
+
 .white-text {
     color: white;
 }
+
 .black-text {
     color: #222;
 }
+
 .section-title {
     animation-delay: 0.1s;
     -webkit-animation-delay: 0.1s;
+    padding-left: 10px;
 }
+
 .content {
     animation-delay: 0.5s;
     -webkit-animation-delay: 0.5s;
 }
+
 .arrow {
     font-size: 4rem;
     cursor: pointer;
 }
+
 .form-layout {
     margin: 60px 0px 16px 0px;
 }
+
 .responsive-text {
     font-size: 0.6rem;
 }
+
 .header-responsive-text {
     font-size: 1rem;
 }
+
+.section-title-container {
+    display: flex;
+    height: auto;
+}
+
 @media (min-width: 576px) {
     .responsive-text {
-        font-size:0.8rem;
+        font-size: 0.8rem;
     }
+
     .header-responsive-text {
         font-size: 1.3rem;
     }
 }
+
 @media (min-width: 768px) {
     .responsive-text {
-        font-size:1rem;
+        font-size: 1rem;
     }
+
     .header-responsive-text {
         font-size: 1.5rem;
+    }
+
+    .section-title-container {
+        height: 100vh;
+    }
+
+    .research-col {
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-right: 50px !important;
+    }
+
+    .scrollable {
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-right: 50px !important;
     }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .responsive-text {
-        font-size:1.25rem;
+        font-size: 1.25rem;
     }
+
     .header-responsive-text {
         font-size: 2rem;
     }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) {}
 
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0) !important;
 }

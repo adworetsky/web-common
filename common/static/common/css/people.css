@@ -1,5 +1,10 @@
 .card-img-top {
     cursor: pointer;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.card {
+    border-radius: 0;
 }
 .portrait-text {
   font-size: 1rem;

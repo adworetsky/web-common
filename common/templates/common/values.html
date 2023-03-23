@@ -1,5 +1,5 @@
 {% extends 'common/base.html' %}
-{% load staticfiles %}
+{% load static %}
 
 {% block title %}values{% endblock %}
 
@@ -8,24 +8,17 @@
 {% block content %}
 <div class="container-fluid nopad pagefade">
     <div class="row no-gutters title">
-        <div class="col-10 offset-1 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-3 align-self-center">
-            <h1 class="display-4 black-text animated fadeInLeft section-title" style="font-size:2.5rem;">Our lab's values</h1>
+        <div class="col-9 offset-2 col-md-4 offset-md-0 col-lg-4 offset-lg-0 col-xl-3 section-title-container">
+            <h1 class="display-4 black-text animated fadeInLeft section-title align-self-center" style="font-size:2.5rem;">Our lab's values</h1>
         </div>
-        <div class="col-10 offset-1 col-md-6 offset-md-1 col-lg-7 offset-lg-0 col-xl-8 animated fadeInRight content">
-            <br><br><br>
-            <h2 class="text-center">Gratton Lab Values Statement</h2>
-            <br><br><br>
-            <p class="text-center"><b>Diversity enhances our ability to do science.</b> Having a diverse perspective of ideas, beliefs, thoughts, and values improves critical thinking, problem solving, creativity, and innovation which we believe is paramount to conducting quality research. This includes diversity of cultures, race, gender, sexual orientation, upbringing, lifestyle, ability status, and experiences.</p>
-            <br>
-            <p class="text-center"><b>We commit to enhancing diversity and inclusion</b> at all levels of lab activities, from our research to our members through: (1) active outreach activities, (2) activities that level the playing field (making it easy to apply to/access research), and (3) day to day efforts to promote inclusion, reduce bias, and call out acts of exclusion both within and outside of the lab.</p>
-            <br>
-            <p class="text-center"><b>We believe in treating others with respect.</b> We respect and acknowledge that others within and outside of the lab will have different backgrounds, experiences, strengths and weaknesses than ourselves and we value all intersecting identities and perspectives. We believe for all to flourish we must play an active role in being thoughtful, respectful, and supportive. By holding ourselves accountable we strive towards improving the way research is conducted.</p>
-            <br>
-            <p class="text-center"><b>We believe that a central goal of our research is to give back to our community,</b> by improving science and society. To support this goal, we commit to (1) making our research available and understandable to the public and (2) supporting open and reproducible science policies, such as making our code and data publicly available.</p>
-            <br>
-            <p class="text-center"><b>We commit towards continuing to educate ourselves and reflect both individually and collectively on how we can continue to support members of our community who may be experiencing barriers.</b></p>
-            <br><br><br>
-            <img src="https://cdn.jsdelivr.net/gh/cgratton/web-common@caterina/common/static/common/imgs/in_this_lab_we_believe.png" class="center">
+        <div class="col-9 offset-2 col-md-7 offset-md-1 col-lg-8 offset-lg-0 col-xl-9 animated fadeInRight content scrollable" style="padding: 50px 0 50px 0">
+            <h1 class="display-4">Gratton Lab Values Statement</h1>
+            <p class="text-justify"><b>Diversity enhances our ability to do science.</b> Having a diverse perspective of ideas, beliefs, thoughts, and values improves critical thinking, problem solving, creativity, and innovation which we believe is paramount to conducting quality research. This includes diversity of cultures, race, gender, sexual orientation, upbringing, lifestyle, ability status, and experiences.</p>
+            <p class="text-justify"><b>We commit to enhancing diversity and inclusion</b> at all levels of lab activities, from our research to our members through: (1) active outreach activities, (2) activities that level the playing field (making it easy to apply to/access research), and (3) day to day efforts to promote inclusion, reduce bias, and call out acts of exclusion both within and outside of the lab.</p>
+            <p class="text-justify"><b>We believe in treating others with respect.</b> We respect and acknowledge that others within and outside of the lab will have different backgrounds, experiences, strengths and weaknesses than ourselves and we value all intersecting identities and perspectives. We believe for all to flourish we must play an active role in being thoughtful, respectful, and supportive. By holding ourselves accountable we strive towards improving the way research is conducted.</p>
+            <p class="text-justify"><b>We believe that a central goal of our research is to give back to our community,</b> by improving science and society. To support this goal, we commit to (1) making our research available and understandable to the public and (2) supporting open and reproducible science policies, such as making our code and data publicly available.</p>
+            <p class="text-justify"><b>We commit towards continuing to educate ourselves and reflect both individually and collectively on how we can continue to support members of our community who may be experiencing barriers.</b></p>
+            <img src="https://cdn.jsdelivr.net/gh/cgratton/web-common@caterina/common/static/common/imgs/in_this_lab_we_believe.png" class="img-fluid mx-auto">
         </div>
     </div>
 </div>
