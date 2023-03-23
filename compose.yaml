@@ -10,7 +10,7 @@ services:
     environment:
       - DATABASE_URL=postgres://ajxfstclzxhdss:postgres@postgres:5432/d7i8e5thopmkvh
       - PRODUCTION=TRUE
-      - DEBUG=TRUE
+      - DEBUG=FALSE
       - USE_SUBPATH=TRUE
     secrets:
       - dropbox
