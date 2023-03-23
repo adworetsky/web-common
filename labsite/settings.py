@@ -30,7 +30,6 @@ if DEBUG:  # Do these things if in DEBUG mode
     pass
 else:  # Do these things when DEBUG is disabled
     SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_SSL_REDIRECT = True
 
 ALLOWED_HOSTS = [
     "www.grattonlab.org",
