@@ -33,10 +33,13 @@ else:  # Do these things when DEBUG is disabled
     SECURE_SSL_REDIRECT = True
 
 ALLOWED_HOSTS = [
-    "grattonlabbackend.herokuapp.com",
     "www.grattonlab.org",
     "127.0.0.1",
     "localhost",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://psy.fsu.edu",
 ]
 
 # Application definition
