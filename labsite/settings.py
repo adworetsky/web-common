@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import django
+from django.utils.encoding import force_str
+django.utils.encoding.force_text = force_str
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -147,7 +150,7 @@ try:
         # try loading from docker secrets
         with open("/run/secrets/dropbox", "r") as f:
             # read api key
-            DROPBOX_OAUTH2_TOKEN = f.read()
+            DROPBOX_OAUTH2_TOKEN = f.read().strip()
             print("Loaded Dropbox token from docker secrets.")
     # Set default file storage
     DEFAULT_FILE_STORAGE = "storages.backends.dropbox.DropBoxStorage"
